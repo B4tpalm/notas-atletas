@@ -19,28 +19,24 @@ let atletas = [
 
 for (let i = 0; i < atletas.length; i++) {
     let atleta = atletas[i];
-    let notas = atleta.notas.slice(); // copia para não alterar original
+    let notas = atleta.notas.slice();
 
-    // Ordena as notas em ordem crescente
     notas.sort(function(a, b) {
         return a - b;
     });
 
-    // Pega apenas as 3 do meio (eliminando a menor e a maior)
     let notasComputadas = notas.slice(1, 4);
 
-    // Calcula a soma
     let soma = 0;
     notasComputadas.forEach(function(n) {
         soma += n;
     });
 
-    // Calcula média
     let media = soma / notasComputadas.length;
 
-    // Exibe resultados
     console.log(`Atleta: ${atleta.nome}`);
     console.log(`Notas Obtidas: ${atleta.notas.join(",")}`);
     console.log(`Média Válida: ${media}`);
-    console.log(""); // linha em branco
+    console.log("");
 }
+
